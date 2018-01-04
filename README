@@ -1,0 +1,17 @@
+# Debian dependencies
+sudo aptitude install redis-server
+
+# Create Virtualenv
+virtualenv -p python3 clay3
+
+# Activate virtualenv
+source ~/virtualenvs/clay3/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Worker
+celery -A tasks worker -l info -Q firstq
+
+# Beat
+celery -A tasks beat
