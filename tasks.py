@@ -5,6 +5,7 @@ import random
 app = Celery()
 app.config_from_object('celeryconfig')
 
+
 @app.task(bind=True, ignore_result=True)
 @lock_on_task_error(60)
 def test(self, banco='chile', rut='160987928',
