@@ -9,5 +9,5 @@ EXPOSE 8000
 #CMD celery -A tasks worker -l info -Q firstq
 #CMD cd /tmp/app && celery -A tasks beat
 #CMD /bin/bash
-RUN chmod +x /tmp/app/run.sh
-CMD ./run.sh
+RUN chmod +x run.sh
+CMD ["./run.sh"]
