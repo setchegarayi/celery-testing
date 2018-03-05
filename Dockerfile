@@ -10,4 +10,4 @@ EXPOSE 8000
 #CMD cd /tmp/app && celery -A tasks beat
 #CMD /bin/bash
 RUN chmod +x run.sh
-CMD ./run.sh
+CMD /tmp/app/run.sh
